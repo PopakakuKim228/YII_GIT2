@@ -32,7 +32,7 @@ class Calculator {
                     $this->add();  
                     break;
                 case '3':
-                    echo "Функция вычитания пока не реализована\n";
+                    $this->subtract();
                     break;
                 case '4':
                     echo "Функция деления пока не реализована\n";
@@ -54,6 +54,14 @@ class Calculator {
         echo "Введите второе число: ";
         $this->num2 = (float)trim(fgets(STDIN));
         echo "Числа сохранены: {$this->num1} и {$this->num2}\n";
+    }
+    public function subtract() {
+        if ($this->numbersAreSet()) {
+            $result = $this->num1 - $this->num2;
+            echo "Результат вычитания: {$this->num1} - {$this->num2} = {$result}\n";
+        } else {
+            echo "Сначала введите числа (пункт 1)\n";
+        }
     }
     public function add() {
         if ($this->numbersAreSet()) {
