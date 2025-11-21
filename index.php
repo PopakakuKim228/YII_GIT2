@@ -10,6 +10,6 @@ $n2 = 0;
 if(is_numeric($number1) && is_numeric($number2)){
     $n1 = $number1;
     $n2 = $number2;
-}else echo "вводите только цифры!";
+}else echo "только цифры!";
 echo $n1 - $n2;
 ?>
