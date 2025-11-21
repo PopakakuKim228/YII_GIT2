@@ -2,12 +2,10 @@
 class Calculator {
     private $num1;
     private $num2;
-    
     public function __construct() {
         $this->num1 = 0;
         $this->num2 = 0;
     }
-    
     public function displayMenu() {
         echo "\n=== КАЛЬКУЛЯТОР ===\n";
         echo "1. Ввести два числа\n";
@@ -18,7 +16,6 @@ class Calculator {
         echo "6. Выход\n";
         echo "Выберите пункт меню: ";
     }
-    
     public function run() {
         while (true) {
             $this->displayMenu();
@@ -35,7 +32,7 @@ class Calculator {
                     $this->subtract();
                     break;
                 case '4':
-                    echo "Функция деления пока не реализована\n";
+                    $this->divide();
                     break;
                 case '5':
                     echo "Функция возведения в степень пока не реализована\n";
@@ -59,18 +56,20 @@ class Calculator {
         if ($this->numbersAreSet()) {
             $result = $this->num1 - $this->num2;
             echo "Результат вычитания: {$this->num1} - {$this->num2} = {$result}\n";
+        }
+    }
+    public function divide() {
+        if ($this->numbersAreSet()) {
+            if ($this->num2 == 0) {
+                echo "Ошибка: деление на ноль!\n";
+            } else {
+                $result = $this->num1 / $this->num2;
+                echo "Результат деления: {$this->num1} / {$this->num2} = {$result}\n";
+            }
         } else {
             echo "Сначала введите числа (пункт 1)\n";
         }
     }
-    public function add() {
-        if ($this->numbersAreSet()) {
-            $result = $this->num1 + $this->num2;
-            echo "Результат сложения: {$this->num1} + {$this->num2} = {$result}\n";
-        } else {
-            echo "Сначала введите числа (пункт 1)\n";
-        }
-    }  
     private function numbersAreSet() {
         return isset($this->num1) && isset($this->num2);
     }
