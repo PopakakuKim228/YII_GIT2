@@ -1,14 +1,8 @@
-<?php
-$variants = array("ввести два числа", "выполнить сложение", "выполнить вычитание", "выполнить деление", "возвести число в степень");
-foreach($variants as $option){
-    echo $option . "\n";
+public function power() {
+    if ($this->numbersAreSet()) {
+        $result = $this->num1 ^ $this->num2;
+        echo "Результат возведения в степень: {$this->num1} ^ {$this->num2} = {$result}\n";
+    } else {
+        echo "Сначала введите числа (пункт 1)\n";
+    }
 }
-
-$number =  readline("введите число: ");
-$timeNum = readline("введите степень: ");
-if(is_numeric($number) && is_numeric($timeNum))
-    echo pow($number, $timeNum);
-else echo "только цифры!";
-
-
-?>
