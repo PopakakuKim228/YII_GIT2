@@ -2,10 +2,12 @@
 class Calculator {
     private $num1;
     private $num2;
+    
     public function __construct() {
         $this->num1 = 0;
         $this->num2 = 0;
     }
+    
     public function displayMenu() {
         echo "\n=== КАЛЬКУЛЯТОР ===\n";
         echo "1. Ввести два числа\n";
@@ -16,6 +18,7 @@ class Calculator {
         echo "6. Выход\n";
         echo "Выберите пункт меню: ";
     }
+    
     public function run() {
         while (true) {
             $this->displayMenu();
@@ -26,10 +29,10 @@ class Calculator {
                     $this->inputNumbers();
                     break;
                 case '2':
-                    echo "Функция сложения пока не реализована\n";
+                    $this->add();  
                     break;
                 case '3':
-                    $this->subtract();  
+                    echo "Функция вычитания пока не реализована\n";
                     break;
                 case '4':
                     echo "Функция деления пока не реализована\n";
@@ -52,18 +55,18 @@ class Calculator {
         $this->num2 = (float)trim(fgets(STDIN));
         echo "Числа сохранены: {$this->num1} и {$this->num2}\n";
     }
-    public function subtract() {
+    public function add() {
         if ($this->numbersAreSet()) {
-            $result = $this->num1 - $this->num2;
-            echo "Результат вычитания: {$this->num1} - {$this->num2} = {$result}\n";
+            $result = $this->num1 + $this->num2;
+            echo "Результат сложения: {$this->num1} + {$this->num2} = {$result}\n";
         } else {
             echo "Сначала введите числа (пункт 1)\n";
         }
-    }
+    }  
     private function numbersAreSet() {
         return isset($this->num1) && isset($this->num2);
     }
 }
 $calculator = new Calculator();
 $calculator->run();
-?>1
+?>
