@@ -14,5 +14,8 @@ if(is_numeric($number1) && is_numeric($number2)){
     $n2 = $number2;
 }else echo "только цифры!";
 
-echo $n1 - $n2;
+if($n2 != 0)
+    echo $n1 / $n2;
+else 
+    echo "ошибка: деление ноль!";
 ?>
