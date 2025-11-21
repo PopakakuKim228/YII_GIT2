@@ -2,10 +2,12 @@
 class Calculator {
     private $num1;
     private $num2;
+    
     public function __construct() {
         $this->num1 = 0;
         $this->num2 = 0;
     }
+    
     public function displayMenu() {
         echo "\n=== КАЛЬКУЛЯТОР ===\n";
         echo "1. Ввести два числа\n";
@@ -16,6 +18,7 @@ class Calculator {
         echo "6. Выход\n";
         echo "Выберите пункт меню: ";
     }
+    
     public function run() {
         while (true) {
             $this->displayMenu();
@@ -45,6 +48,7 @@ class Calculator {
             }
         }
     }
+    
     private function inputNumbers() {
         echo "Введите первое число: ";
         $this->num1 = (float)trim(fgets(STDIN));
@@ -52,14 +56,7 @@ class Calculator {
         $this->num2 = (float)trim(fgets(STDIN));
         echo "Числа сохранены: {$this->num1} и {$this->num2}\n";
     }
+}
 $calculator = new Calculator();
 $calculator->run();
-public function division() {
-    if ($this->numbersAreSet()) {
-        $result = $this->num1/$this->num2;
-        echo "Результат деления: {$this->num1}/{$this->num2} = {$result}\n";
-    } else {
-        echo "Сначала введите числа (пункт 1)\n";
-    }
-}
-}
+?>
