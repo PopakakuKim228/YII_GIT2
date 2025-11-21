@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 class Calculator {
     private $num1;
@@ -36,7 +35,7 @@ class Calculator {
                     $this->divide();
                     break;
                 case '5':
-                    echo "Функция возведения в степень пока не реализована\n";
+                    $this->power();
                     break;
                 case '6':
                     echo "Выход из программы.\n";
@@ -79,15 +78,7 @@ class Calculator {
             echo "Сначала введите числа (пункт 1)\n";
         }
     }
-    private function numbersAreSet() {
-        return isset($this->num1) && isset($this->num2);
-    }
-}
-$calculator = new Calculator();
-$calculator->run();
-?>
-=======
-public function power() {
+    public function power() {
     if ($this->numbersAreSet()) {
         $result = $this->num1 ^ $this->num2;
         echo "Результат возведения в степень: {$this->num1} ^ {$this->num2} = {$result}\n";
@@ -95,4 +86,11 @@ public function power() {
         echo "Сначала введите числа (пункт 1)\n";
     }
 }
->>>>>>> power
+    private function numbersAreSet() {
+        return isset($this->num1) && isset($this->num2);
+    }
+}
+$calculator = new Calculator();
+$calculator->run();
+?>
+
