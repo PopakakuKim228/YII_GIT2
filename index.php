@@ -52,6 +52,7 @@ class Calculator {
         $this->num2 = (float)trim(fgets(STDIN));
         echo "Числа сохранены: {$this->num1} и {$this->num2}\n";
     }
+    
     public function subtract() {
         if ($this->numbersAreSet()) {
             $result = $this->num1 - $this->num2;
