@@ -3,13 +3,12 @@ $variants = array("ввести два числа", "выполнить слож
 foreach($variants as $option){
     echo $option . "\n";
 }
-$number1 = readline("первое число: ");
-$number2 = readline("ыторое число: ");
-$n1 = 0;
-$n2 = 0;
-if(is_numeric($number1) && is_numeric($number2)){
-    $n1 = $number1;
-    $n2 = $number2;
-}else echo "только цифры!";
-echo $n1 - $n2;
+
+$number =  readline("введите число: ");
+$timeNum = readline("введите степень: ");
+if(is_numeric($number) && is_numeric($timeNum))
+    echo pow($number, $timeNum);
+else echo "только цифры!";
+
+
 ?>
